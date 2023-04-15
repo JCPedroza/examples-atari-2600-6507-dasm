@@ -1,0 +1,7 @@
+# Compiling
+*.bin
+*.out
+
+# Debugging
+*.lst
+*.sym
