@@ -1,0 +1,15 @@
+{
+  "editor.detectIndentation": true,
+  "editor.insertSpaces": true,
+  "editor.rulers": [
+    80
+  ],
+  "editor.tabSize": 4,
+  "editor.trimAutoWhitespace": true,
+  "files.exclude": {
+      "**/*.bin": true,
+      "**/*.lst": true,
+      "**/*.sys": true
+  },
+  "files.trimTrailingWhitespace": true
+}
