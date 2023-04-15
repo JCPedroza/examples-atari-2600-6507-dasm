@@ -1,12 +1,12 @@
 # Atari 2600 6507 DASM Assembly Examples
 
-Examples of how to write programs, in assembly language, for the Atari 2600.
+Examples of how to write programs in assembly language for the Atari 2600.
 
 ## Dependencies
 
-The [dasm 8-bit macro assembler][20] to compile the code.
+- The [dasm 8-bit macro assembler][20] to compile the code.
 
-The [stella emulator][21] to run the compiled code.
+- The [stella emulator][21] to run the compiled code
 
 ## Install Dependencies
 
@@ -46,9 +46,11 @@ When written to with any value (it will do its thing regardless of the value it
 is set to), the WSYNC register will wait for the leading edge of the horizontal
 blank.
 
-## Atari 2600 Learning Resources
+## Atari 2600 Programming Resources
 
-- [Atari Age][80]
+- [Atari Age][80] info and forums
+- [8 Bit Workshop][81] online IDE
+- [Javatari][82] online emulator
 
 ---
 
@@ -56,3 +58,5 @@ blank.
 [21]: https://stella-emu.github.io/
 
 [80]: https://www.atariage.com
+[81]: https://8bitworkshop.com/
+[82]: https://javatari.org/
