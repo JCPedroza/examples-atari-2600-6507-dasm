@@ -42,8 +42,9 @@ stella [options] <ROM file>
 
 ### TIA - WSYNC
 
-When written to with any value, the WSYNC register will wait for the leading
-edge of the horizontal blank.
+When written to with any value (it will do its thing regardless of the value it
+is set to), the WSYNC register will wait for the leading edge of the horizontal
+blank.
 
 ## Atari 2600 Learning Resources
 
