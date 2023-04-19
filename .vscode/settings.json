@@ -9,7 +9,7 @@
   "files.exclude": {
       "**/*.bin": true,
       "**/*.lst": true,
-      "**/*.sys": true
+      "**/*.sym": true
   },
   "files.trimTrailingWhitespace": true
 }
