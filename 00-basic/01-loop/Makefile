@@ -1,5 +1,5 @@
 build:
-	dasm loop.asm -oloop.bin -lloop.lst -sloop.sym -f3 -v4 -S
+	dasm loop.asm -f3 -S -v4 -oloop.bin -lloop.lst -sloop.sym
 
 clean:
 	rm *.out *.bin *.lst *.sym -f
