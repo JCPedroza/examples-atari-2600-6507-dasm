@@ -6,8 +6,8 @@
 
     processor 6502
 
-    include "macro.asm"
     include "vcs.asm"
+    include "macro.asm"
 
     seg Code
     org $F000

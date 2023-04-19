@@ -1,15 +1,10 @@
-all:
-	dasm rainbow.asm -orainbow.bin -lrainbow.lst -srainbow.sym -f3 -S
-
-rainbow:
-	dasm rainbow.asm -orainbow.bin -lrainbow.lst -srainbow.sym -f3 -S
-
-rainbow-run:
-	dasm rainbow.asm -orainbow.bin -lrainbow.lst -srainbow.sym -f3 -Iincludes//
-	stella rainbow.bin
+build:
+	dasm rainbow.asm -I../../lib -f3 -S -v4 -orainbow.bin -lrainbow.lst -srainbow.sym
 
 clean:
-	rm *.out -f
-	rm *.bin -f
-	rm *.lst -f
-	rm *.sym -f
+	rm *.out *.bin *.lst *.sym -f
+
+run:
+	make build
+	stella -debug rainbow.bin
+	make clean
