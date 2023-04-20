@@ -1,12 +1,8 @@
-/**
-    This program iterates using the <y> register as a counter, decrementing <y>
-    by one each iteration, and branching to <Loop> if <y> doesn't equal zero.
-
-    Each iteration the <y> register is copied to <a>, and subtracted by 5.
-*/
+; This program iterates using the <y> register as a counter, decrementing <y>
+; by one each iteration, and branching to <Loop> if <y> doesn't equal zero.
+; Each iteration the <y> register is copied to <a>, and subtracted by 5.
 
     processor 6502
-
     seg Code
     org $F000   ; Set origin at first ROM address
 
