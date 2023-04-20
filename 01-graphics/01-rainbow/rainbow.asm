@@ -1,5 +1,3 @@
-; Format is NTSC.
-
 ; This program draws the entire NTSC color palette in a rainbow-like pattern.
 ; Each color is drawn in one scanline: 128 colors, 192 visible scanlines (64
 ; free scanlines).
@@ -14,11 +12,10 @@
 
 Start:
     CLEAN_START
+    ldx #0          ; Number 0 is used to turn off vsync and vblank
+    lda #2          ; Number 2 is used to turn on vsync and vblank
 
 NextFrame:
-    lda #2          ; Number 2 is used to turn on vsync and vblank
-    ldx #0          ; Number 0 is used to turn off vsync and vblank
-
     ; Generate 3 scanlines of vsync
     sta VSYNC       ; Turn on vsync
     sta WSYNC       ; Wait for next scanline
