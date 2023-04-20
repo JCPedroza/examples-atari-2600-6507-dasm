@@ -1,24 +1,29 @@
 ; MACRO.H
-; Version 1.06, 3/SEPTEMBER/2004
+; Version 1.10, 09/MAY/2022
 
-VERSION_MACRO         = 106
+VERSION_MACRO         = 110
 
 ;
 ; THIS FILE IS EXPLICITLY SUPPORTED AS A DASM-PREFERRED COMPANION FILE
-; PLEASE DO *NOT* REDISTRIBUTE MODIFIED VERSIONS OF THIS FILE!
+; The latest version can be found at https://dasm-assembler.github.io/
 ;
 ; This file defines DASM macros useful for development for the Atari 2600.
 ; It is distributed as a companion machine-specific support package
-; for the DASM compiler. Updates to this file, DASM, and associated tools are
-; available at at http://www.atari2600.org/dasm
+; for the DASM compiler.
 ;
-; Many thanks to the people who have contributed.  If you take issue with the
-; contents, or would like to add something, please write to me
-; (atari2600@taswegian.com) with your contribution.
-;
+; Many thanks to the people who have contributed. If you find an issue with the
+; contents, or would like ot add something, please report as an issue at...
+; https://github.com/dasm-assembler/dasm/issues
+
+
 ; Latest Revisions...
-;
-; 1.06  03/SEP/2004     - nice revision of VERTICAL_BLANK (Edwin Blink)
+; 1.10  09/MAY/2022     - ("nop 0") should be changed to "nop VSYNC", to ensure that
+;                         the instruction will access a "safe" memory location even
+;                         when a different TIA_BASE_ADDRESS is defined - ale_79
+; 1.09  05/SEP/2020     - updated license/links
+; 1.08  13/JUL/2020     - added use of LXA to CLEAN_START
+; 1.07  19/JAN/2020     - correction to comment VERTICAL_SYNC
+; 1.06  03/SEP/2004     - nice revision of VERTICAL_SYNC (Edwin Blink)
 ; 1.05  14/NOV/2003     - Added VERSION_MACRO equate (which will reflect 100x version #)
 ;                         This will allow conditional code to verify MACRO.H being
 ;                         used for code assembly.
@@ -63,7 +68,7 @@ VERSION_MACRO         = 106
 
                 IF .CYCLES & 1
                     IFNCONST NO_ILLEGAL_OPCODES
-                        nop 0
+                        nop VSYNC
                     ELSE
                         bit VSYNC
                     ENDIF
@@ -104,8 +109,12 @@ VERSION_MACRO         = 106
                 sei
                 cld
 
-                ldx #0
-                txa
+                IFNCONST NO_ILLEGAL_OPCODES
+                    lxa #0
+                ELSE
+                    ldx #0
+                    txa
+                ENDIF
                 tay
 .CLEAR_STACK    dex
                 txs
