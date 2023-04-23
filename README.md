@@ -48,9 +48,10 @@ blank.
 
 ## Atari 2600 Programming Resources
 
-- [Atari Age][80] info and forums
-- [8 Bit Workshop][81] online IDE
-- [Javatari][82] online emulator
+- [Atari Age][80] info and forums.
+- [8 Bit Workshop][81] online IDE.
+- [Javatari][82] online emulator.
+- Programming Games for the Atari 2600 course at [Udemy][83] or [Pikuma][84].
 
 ---
 
@@ -60,3 +61,5 @@ blank.
 [80]: https://www.atariage.com
 [81]: https://8bitworkshop.com/
 [82]: https://javatari.org/
+[83]: https://www.udemy.com/course/programming-games-for-the-atari-2600
+[84]: https://pikuma.com/courses/learn-assembly-language-programming-atari-2600-games
