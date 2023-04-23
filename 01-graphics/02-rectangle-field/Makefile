@@ -6,5 +6,5 @@ clean:
 
 run:
 	make build
-	stella -debug rf.bin
+	stella rf.bin
 	make clean
